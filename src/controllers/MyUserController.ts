@@ -21,7 +21,7 @@ const createCurrentUser = async (req: Request, res: Response) => {
 
 const updateCurrentUser = async (req: Request, res: Response) => {
   try {
-    const { email, firstName, lastName, addressLine1, country, city } =
+    const { email, firstName, lastName, role, addressLine1, country, city } =
       req.body;
     const user = await User.findOne({ email });
 
@@ -31,6 +31,7 @@ const updateCurrentUser = async (req: Request, res: Response) => {
 
     user.firstName = firstName;
     user.lastName = lastName;
+    user.role = role;
     user.addressLine1 = addressLine1;
     user.city = city;
     user.country = country;

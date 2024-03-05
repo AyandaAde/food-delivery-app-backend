@@ -15,6 +15,9 @@ const userSchema = new mongoose.Schema({
   lastName: {
     type: String,
   },
+  role: {
+    type: String,
+  },
   addressLine1: {
     type: String,
   },
