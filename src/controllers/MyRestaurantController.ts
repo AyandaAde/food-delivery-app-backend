@@ -94,8 +94,14 @@ async function updateMyRestaurant(req: Request, res: Response) {
   } = req.body;
 
   try {
+    const user = await User.findOne({
+      userId,
+    });
+    if (!user) {
+      throw new Error("User not found");
+    }
     const restaurant = await Restaurant.findOne({
-      user: userId,
+      user: user._id,
     });
 
     if (!restaurant) {
