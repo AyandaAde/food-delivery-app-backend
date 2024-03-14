@@ -10,4 +10,6 @@ router.post(
 
 router.post("/checkout/webhook", OrderController.stripeWebhookHandler);
 
+router.get("/:userId", OrderController.getMyOrders);
+
 export default router;

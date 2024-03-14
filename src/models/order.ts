@@ -2,7 +2,7 @@ import { MongoServerSelectionError } from "mongodb";
 import mongoose from "mongoose";
 
 const orderSchema = new mongoose.Schema({
-  restuarant: { type: mongoose.Schema.Types.ObjectId, ref: "Restaurant" },
+  restaurant: { type: mongoose.Schema.Types.ObjectId, ref: "Restaurant" },
   user: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
   deliveryDetails: {
     email: { type: String, required: true },
