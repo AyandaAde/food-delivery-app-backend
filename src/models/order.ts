@@ -1,4 +1,3 @@
-import { MongoServerSelectionError } from "mongodb";
 import mongoose from "mongoose";
 
 const orderSchema = new mongoose.Schema({
@@ -22,7 +21,7 @@ const orderSchema = new mongoose.Schema({
     type: String,
     enum: ["placed", "paid", "inProgress", "outForDelivery", "delivered"],
   },
-  createdAt: { type: Date, dafault: Date.now },
+  createdAt: { type: Date, default: Date.now },
 });
 
 const Order = mongoose.model("Order", orderSchema);
